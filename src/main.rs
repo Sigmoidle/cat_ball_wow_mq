@@ -12,6 +12,10 @@ const BASE_BALL_VELOCITY: f32 = 0.4;
 
 const GAME_SHAPE: Vec2 = Vec2 { x: 100.0, y: 100.0 };
 
+trait Drawable {
+    fn draw(&self, game_area: &GameArea);
+}
+
 enum TranslateType {
     Normal,
     JustScale,
@@ -165,7 +169,9 @@ impl Paw {
             }
         };
     }
+}
 
+impl Drawable for Paw {
     fn draw(&self, game_area: &GameArea) {
         let screen_size = game_area.game_to_screen(self.rect.size(), TranslateType::JustScale);
         let screen_position = game_area.game_to_screen(self.rect.point(), TranslateType::Normal);
@@ -248,7 +254,9 @@ impl Ball {
         self.rect.x += self.velocity.x;
         self.rect.y += self.velocity.y;
     }
+}
 
+impl Drawable for Ball {
     fn draw(&self, game_area: &GameArea) {
         let screen_size = game_area.game_to_screen(self.rect.size(), TranslateType::JustScale);
         let screen_position = game_area.game_to_screen(self.rect.point(), TranslateType::Normal);
@@ -287,7 +295,9 @@ impl Scores {
             self.best_score = self.score
         }
     }
+}
 
+impl Drawable for Scores {
     fn draw(&self, game_area: &GameArea) {
         let score_text_area =
             game_area.game_to_screen(Vec2 { x: 5.0, y: 10.0 }, TranslateType::Normal);
