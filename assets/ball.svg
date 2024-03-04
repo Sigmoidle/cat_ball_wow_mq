@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="ball.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.3073155"
+     inkscape:cx="215.32675"
+     inkscape:cy="291.05446"
+     inkscape:window-width="1920"
+     inkscape:window-height="1172"
+     inkscape:window-x="0"
+     inkscape:window-y="43"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer6" />
+  <defs
+     id="defs1">
+    <filter
+       id="mask-powermask-path-effect3_inverse"
+       inkscape:label="filtermask-powermask-path-effect3"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect3_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect3_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       id="mask-powermask-path-effect4_inverse"
+       inkscape:label="filtermask-powermask-path-effect4"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect4_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect4_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       id="mask-powermask-path-effect5_inverse"
+       inkscape:label="filtermask-powermask-path-effect5"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect5_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect5_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7">
+      <ellipse
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:24.3454;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
+         id="ellipse7"
+         inkscape:transform-center-x="2.5704382"
+         inkscape:transform-center-y="0.85788333"
+         inkscape:label="Mask"
+         mask="none"
+         clip-path="none"
+         ry="183.69183"
+         rx="183.46249"
+         cy="259.44574"
+         cx="260.64661" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Shadow">
+    <ellipse
+       style="fill:#000000;fill-opacity:0.3;fill-rule:nonzero;stroke:#000000;stroke-width:30.1069;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
+       id="path1-5-1-8"
+       cx="267.44647"
+       cy="273.07681"
+       inkscape:transform-center-x="3.1874402"
+       inkscape:transform-center-y="1.0580288"
+       rx="227.50009"
+       ry="226.54475"
+       inkscape:label="Shadow" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Fill">
+    <ellipse
+       style="display:inline;fill:#f0658c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:29.7858;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
+       id="path1-5"
+       inkscape:transform-center-x="3.1448488"
+       inkscape:transform-center-y="1.0495928"
+       inkscape:label="Fill"
+       mask="none"
+       clip-path="none"
+       ry="224.74107"
+       rx="224.46048"
+       cy="239.63397"
+       cx="249.35338" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Light">
+    <g
+       id="g7"
+       transform="matrix(1.223468,0,0,1.223468,-69.539394,-77.789579)">
+      <ellipse
+         style="display:inline;fill:#ff87a8;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:24.3454;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
+         id="path1-5-1"
+         cx="216.64062"
+         cy="217.76619"
+         inkscape:transform-center-x="2.5704355"
+         inkscape:transform-center-y="0.85788876"
+         rx="183.46249"
+         ry="183.69183"
+         inkscape:label="Light"
+         clip-path="url(#clipPath7)" />
+    </g>
+  </g>
+  <g
+     inkscape:label="Outline"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:1;fill:#ff77a0;fill-opacity:0;fill-rule:nonzero;stroke:#000000;stroke-width:29.7858;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="path1"
+       cx="249.35338"
+       cy="239.63397"
+       inkscape:transform-center-x="3.1448488"
+       inkscape:transform-center-y="1.0495928"
+       rx="224.46048"
+       ry="224.74107"
+       inkscape:label="Outline" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Highlight">
+    <ellipse
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:61.3574;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
+       id="path2"
+       inkscape:label="Highlight"
+       ry="31.241869"
+       rx="48.755444"
+       cy="197.12079"
+       cx="-1.8386793"
+       transform="matrix(0.6847728,-0.72875662,0.79173842,0.61086027,0,0)" />
+  </g>
+</svg>
