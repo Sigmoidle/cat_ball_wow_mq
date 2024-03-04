@@ -209,26 +209,28 @@ impl Ball {
         }
     }
 
-    fn update(&mut self, paw_locations: Vec<Rect>, mut score: u32) -> u32 {
-        let ball_velocity = BASE_BALL_VELOCITY + BASE_BALL_VELOCITY * ((score + 1) as f32 / 100.0);
+    fn update(&mut self, paw_locations: Vec<Rect>, scores: &mut Scores) {
+        // calculate ball velocity
+        let ball_velocity =
+            BASE_BALL_VELOCITY + BASE_BALL_VELOCITY * ((scores.score + 1) as f32 / 100.0);
         // Check for collision with walls
         if self.rect.x < 0.0 {
             self.velocity.x = ball_velocity;
-            score += 1;
+            scores.score += 1;
         }
         if (self.rect.x + self.rect.w) > GAME_SHAPE.x {
             self.velocity.x = -ball_velocity;
-            score += 1;
+            scores.score += 1;
         }
         if self.rect.y < 0.0 {
             self.velocity.y = ball_velocity;
-            score += 1;
+            scores.score += 1;
         }
         // Check for collision with paws
         for paw_location in paw_locations {
             if self.rect.contains(paw_location.center()) {
                 self.velocity.y = -ball_velocity;
-                score += 1;
+                scores.score += 1;
             }
         }
         // Check end-game
@@ -239,15 +241,12 @@ impl Ball {
                 x: BASE_BALL_VELOCITY,
                 y: BASE_BALL_VELOCITY,
             };
-            score = 0;
+            scores.score = 0;
         }
 
         // Update position
         self.rect.x += self.velocity.x;
         self.rect.y += self.velocity.y;
-
-        // Return the new score
-        score
     }
 
     fn draw(&self, game_area: &GameArea) {
@@ -270,29 +269,67 @@ impl Ball {
     }
 }
 
+struct Scores {
+    score: u32,
+    best_score: u32,
+}
+
+impl Scores {
+    fn new() -> Self {
+        Self {
+            score: 0,
+            best_score: 0,
+        }
+    }
+
+    fn update(&mut self) {
+        if self.score > self.best_score {
+            self.best_score = self.score
+        }
+    }
+
+    fn draw(&self, game_area: &GameArea) {
+        let score_text_area =
+            game_area.game_to_screen(Vec2 { x: 5.0, y: 10.0 }, TranslateType::Normal);
+        let text_size =
+            game_area.game_to_screen(Vec2 { x: 10.0, y: 10.0 }, TranslateType::JustScale);
+        draw_text(
+            &format!("Score: {}", self.score),
+            score_text_area.x,
+            score_text_area.y,
+            text_size.x,
+            BLACK,
+        );
+        let best_score_text_area =
+            game_area.game_to_screen(Vec2 { x: 5.0, y: 17.5 }, TranslateType::Normal);
+        draw_text(
+            &format!("Best Score: {}", self.best_score),
+            best_score_text_area.x,
+            best_score_text_area.y,
+            text_size.x,
+            BLACK,
+        );
+    }
+}
+
 #[macroquad::main("Cat Ball Wow!")]
 async fn main() {
+    // Load textures
     let ball_texture: Texture2D = load_texture("assets/ball.png").await.unwrap();
     ball_texture.set_filter(FilterMode::Linear);
-
     let background_texture: Texture2D = load_texture("assets/background.png").await.unwrap();
     background_texture.set_filter(FilterMode::Linear);
-
     let left_paw_texture: Texture2D = load_texture("assets/paw_left.png").await.unwrap();
     left_paw_texture.set_filter(FilterMode::Linear);
-
     let right_paw_texture: Texture2D = load_texture("assets/paw_right.png").await.unwrap();
     right_paw_texture.set_filter(FilterMode::Linear);
 
+    // Create game objects
     let mut game_area = GameArea::new(background_texture);
-
     let mut left_paw = Paw::new(left_paw_texture, PawSide::Left);
     let mut right_paw = Paw::new(right_paw_texture, PawSide::Right);
-
     let mut ball = Ball::new(ball_texture);
-
-    let mut score: u32 = 0;
-    let mut best_score: u32 = 0;
+    let mut scores = Scores::new();
 
     loop {
         clear_background(PINK);
@@ -306,36 +343,11 @@ async fn main() {
         right_paw.draw(&game_area);
 
         let paw_locations = vec![left_paw.rect, right_paw.rect];
-        score = ball.update(paw_locations, score);
+        ball.update(paw_locations, &mut scores);
         ball.draw(&game_area);
 
-        // Update score text
-        let score_text_area =
-            game_area.game_to_screen(Vec2 { x: 5.0, y: 10.0 }, TranslateType::Normal);
-        let text_size =
-            game_area.game_to_screen(Vec2 { x: 10.0, y: 10.0 }, TranslateType::JustScale);
-        draw_text(
-            &format!("Score: {score}"),
-            score_text_area.x,
-            score_text_area.y,
-            text_size.x,
-            BLACK,
-        );
-
-        // Update best score
-        if score > best_score {
-            best_score = score;
-        }
-        // Update best score text
-        let best_score_text_area =
-            game_area.game_to_screen(Vec2 { x: 5.0, y: 17.5 }, TranslateType::Normal);
-        draw_text(
-            &format!("Best Score: {best_score}"),
-            best_score_text_area.x,
-            best_score_text_area.y,
-            text_size.x,
-            BLACK,
-        );
+        scores.update();
+        scores.draw(&game_area);
 
         next_frame().await
     }
